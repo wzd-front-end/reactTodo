@@ -1,6 +1,6 @@
 import {SET_FILTER} from './actionTypes'
 
-export const setFilter= (filter)=>( {
+export const setFilter= (filterType)=>( {
     type:SET_FILTER,
-    filter:filter
+    filter:filterType
 })

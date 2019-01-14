@@ -1,5 +1,5 @@
 import {SET_FILTER} from "./actionTypes";
-import {FilterTypes} from "./constants";
+import {FilterTypes} from "../constants";
 
 export default (state = FilterTypes.ALL,action)=>{
     switch (action.type) {

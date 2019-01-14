@@ -1,1 +1,1 @@
-export const SET_FILTER='SET/FILTER';
+export const SET_FILTER = 'FILTER/SET';
