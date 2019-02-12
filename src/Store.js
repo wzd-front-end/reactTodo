@@ -4,7 +4,9 @@ import {reducer as todoReducer} from './todos';
 import {reducer as filterReducer} from './filter';
 
 
+// import Perf from 'react-addons-perf';
 const win = window;
+// win.Perf = Perf;
 
 
 const reducer = combineReducers({
@@ -12,9 +14,13 @@ const reducer = combineReducers({
     filter: filterReducer
 });
 
+const middleWares=[];
+if(process.env.NODE_ENV !=='production'){
+    middleWares.push(require('redux-immutable-state-invariant').default())
+}
 
 const storeEnhancers = compose(
-    // applyMiddleware(...middlewares),
+    applyMiddleware(...middleWares),
     (win && win.devToolsExtension) ? win.devToolsExtension() : (f) => f,
 );
 
