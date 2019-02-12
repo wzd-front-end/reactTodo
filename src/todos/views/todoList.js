@@ -12,10 +12,11 @@ const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
                 todos.map((item) => (
                     <TodoItem
                         key={item.id}
+                        id={item.id}
                         text={item.text}
                         completed={item.completed}
-                        onToggle={() => onToggleTodo(item.id)}
-                        onRemove={() => onRemoveTodo(item.id)}
+                        onToggle={onToggleTodo}
+                        onRemove={onRemoveTodo}
                     />
                 ))
             }
