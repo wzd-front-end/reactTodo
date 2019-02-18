@@ -4,11 +4,13 @@ import {Provider} from 'react-redux'
 // import * as serviceWorker from './serviceWorker';
 
 import TodoApp from './TodoApp'
+import Weather from './weather_react/view/weather'
 import store from './Store'
 
 ReactDOM.render(
     <Provider store={store}>
         <TodoApp />
+        <Weather />
     </Provider>,
     document.getElementById('root')
 );

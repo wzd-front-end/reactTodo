@@ -1,5 +1,6 @@
 {
   "name": "todo",
+  "proxy": "http://www.weather.com.cn",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
