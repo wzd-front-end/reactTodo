@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import {connet} from 'react-redux';
+import {connect} from 'react-redux';
 import propTypes from 'prop-types'
 import * as Status from './status';
 
-const weather = ({status, cityName, weather, lowestTemp, highestTemp}) => {
+const Weather = ({status, cityName, weather, lowestTemp, highestTemp}) => {
     switch (status) {
         case Status.LOADING: {
             return <div>天气信息请求中...</div>
@@ -27,7 +27,7 @@ const weather = ({status, cityName, weather, lowestTemp, highestTemp}) => {
     }
 }
 
-weather.propTypes = {
+Weather.propTypes = {
     status: propTypes.string.isRequired,
     cityName: propTypes.string,
     weather: propTypes.string,
@@ -47,4 +47,4 @@ const mapStateToProps = (state) => {
     }
 };
 
-export default connet(mapStateToProps)(Weather);
+export default connect(mapStateToProps)(Weather);

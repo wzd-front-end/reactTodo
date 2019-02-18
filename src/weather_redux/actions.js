@@ -22,7 +22,7 @@ export const fetchWeather = (cityCode)=>{
 
         return fetch(apiUrl).then((respone) => {
             if(respone.status !== 200){
-                throw new Error('Fail to get response with status ' + response.status);
+                throw new Error('Fail to get response with status ' + respone.status);
             }
 
             respone.json().then((responeJson) => {

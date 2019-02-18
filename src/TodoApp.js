@@ -10,13 +10,20 @@ function showCount(count) {
 function TodoApp() {
     return (
         <div>
-            <Todos/>
-            <Filter/>
-            <CountDown startCount={10}>
-                {
-                    showCount
-                }
-            </CountDown>
+            <div>
+                <h2>例子一</h2>
+                <Todos/>
+                <Filter/>
+            </div>
+            <div>
+                <h2>例子二</h2>
+                <CountDown startCount={10}>
+                    {
+                        showCount
+                    }
+                </CountDown>
+            </div>
+
         </div>
     )
 }
