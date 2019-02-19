@@ -46,5 +46,23 @@ const mapStateToProps = (state) => {
         highestTemp: weatherData.temp2
     }
 };
-
+// var arrTest = [ [1, 2, 2], [3, 4, 5, 5], [6, 7, 8, 9, [11, 12, [12, 13, [14] ] ] ], 10];
+// var resultArr =[];
+// function test(arr) {
+//     if(Array.isArray(arr)){
+//         arr.forEach(item =>{
+//             if(Array.isArray(item)){
+//                 test(item)
+//             }else {
+//                 if(resultArr.indexOf(item)<0){
+//                     resultArr.push(item)
+//                 }
+//             }
+//         })
+//     }
+// }
+// test(arrTest);
+// console.log(resultArr.sort(function (a,b) {
+//     return a-b;
+// }))
 export default connect(mapStateToProps)(Weather);
