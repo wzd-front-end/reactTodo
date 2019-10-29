@@ -1,4 +1,4 @@
-import {createSelector} from 'reselect'
+import {createSelector} from 'reselect/lib/index'
 import {FilterTypes} from '../constants.js';
 
 const getFilter = (state) => state.filter;
