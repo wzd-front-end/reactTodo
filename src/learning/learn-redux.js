@@ -1,4 +1,5 @@
 export function createStore(reducer, enhancer) {
+  console.log(enhancer)
   if (enhancer) {
     return enhancer(createStore)(reducer)
   }
