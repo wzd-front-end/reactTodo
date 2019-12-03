@@ -41,8 +41,6 @@
 
 .todo-item .toggle {
     height: 40px;
-    -webkit-appearance: none;
-    appearance: none;
     position: absolute;
     top: 0;
     bottom: 0;
