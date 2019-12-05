@@ -4,46 +4,51 @@ import {connect} from 'react-redux'
 import TodoItem from './todoItem'
 import {toggleTodo, removeTodo} from '../actions'
 import {selectVisibleTodos} from '../selector'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 
 
 const TodoList = ({todos, onToggleTodo, onRemoveTodo}) => {
-    return (
-        <ul className="todo-list">
-            {
-                todos.map((item) => (
-                    <TodoItem
-                        key={item.id}
-                        id={item.id}
-                        text={item.text}
-                        completed={item.completed}
-                        onToggle={onToggleTodo}
-                        onRemove={onRemoveTodo}
-                    />
-                ))
-            }
-        </ul>
-    )
+  return (
+    <TransitionGroup className="todo-list">
+      {todos.map((item) => (
+        // 注意：这里使用是的classNames，是有s后缀的，目的是为了区别className
+        <CSSTransition
+          key={item.id}
+          timeout={500}
+          classNames="item"
+        >
+          <TodoItem
+            id={item.id}
+            text={item.text}
+            completed={item.completed}
+            onToggle={onToggleTodo}
+            onRemove={onRemoveTodo}
+          />
+        </CSSTransition>
+      ))}
+    </TransitionGroup>
+  )
 }
 
 TodoList.propTypes = {
-    todos: PropTypes.array.isRequired
+  todos: PropTypes.array.isRequired
 }
 
 const mapStateToProps = (state) => {
-    return {
-        todos: selectVisibleTodos(state)
-    };
+  return {
+    todos: selectVisibleTodos(state)
+  };
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onToggleTodo: (id) => {
-            dispatch(toggleTodo(id));
-        },
-        onRemoveTodo: (id) => {
-            dispatch(removeTodo(id));
-        }
+  return {
+    onToggleTodo: (id) => {
+      dispatch(toggleTodo(id));
+    },
+    onRemoveTodo: (id) => {
+      dispatch(removeTodo(id));
     }
+  }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 

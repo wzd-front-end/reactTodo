@@ -1,22 +1,23 @@
 .todos {
-    width: 500px;
-    font-size: 30px;
+    width: 100%;
 }
 
 .add-todo {
     position: relative;
+    width: 500px;
 }
 
 .add-todo .new-todo {
     display: block;
-    height: 36px;
+    height: 38px;
     width: 350px;
-    line-height: 36px;
+    line-height: 38px;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     border-radius: 4px;
     border: 1px solid #777777;
+    padding: 0 10px;
 }
 
 .add-todo .add-btn {
@@ -43,11 +44,11 @@
 
 
 .todo-item {
-    position: relative;
     height: 40px;
+    width: 500px;
     display: flex;
     align-items: center;
-   border: 1px solid #cc9a9a;
+    border: 1px solid #cc9a9a;
     border-radius: 4px;
     margin-top: 10px;
     padding: 5px 10px;
@@ -94,4 +95,26 @@
 
 .todo-item .remove:hover {
     color: #af5b5e;
+}
+
+.item-enter {
+    opacity: 0;
+    transform: translateX(50%);
+}
+
+.item-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
+}
+
+.item-exit {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.item-exit-active {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 500ms ease-in, transform 500ms ease-in;
 }
