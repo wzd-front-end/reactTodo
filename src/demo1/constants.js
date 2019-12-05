@@ -1,6 +1,6 @@
 const ALL = '全部';
-const COMPLETED = '已完成';
-const UNCOMPLETED = '未完成';
+const COMPLETED = '已选择';
+const UNCOMPLETED = '未选择';
 
 export const FilterTypes= {
     ALL,

@@ -6,17 +6,10 @@ const TodoItem = ({onToggleItem, onRemoveItem, completed, text}) => {
 
   return (
     <li
-      className="todo-item"
-      style={{textDecoration: completed ? 'line-through' : 'none'}} onClick={onToggleItem}>
+      className="todo-item" onClick={onToggleItem}>
       <input type="checkbox" className="toggle" readOnly checked={completed}/>
-
-      <label className="text">
-        <button
-          type="button"
-          className="link-button"
-        >
-          {text}
-        </button>
+      <label className="text" style={{textDecoration: completed ? 'line-through' : 'none'}}>
+        {text}
       </label>
       <button className="remove" onClick={onRemoveItem}>×</button>
     </li>

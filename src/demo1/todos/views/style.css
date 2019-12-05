@@ -9,18 +9,28 @@
 
 .add-todo .new-todo {
     display: block;
-    margin: 0 0 0 50px;
-    font-size: 30px;
+    height: 36px;
+    width: 350px;
+    line-height: 36px;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
+    border-radius: 4px;
+    border: 1px solid #777777;
 }
 
 .add-todo .add-btn {
-    font-size: 30px;
+    height: 40px;
+    width: 120px;
+    line-height: 40px;
+    background: #08bac6;
+    border-radius: 4px;
+    border: none;
     position: absolute;
     top: 0;
     right: 0;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .todo-list {
@@ -34,45 +44,45 @@
 
 .todo-item {
     position: relative;
-    height: 60px;
-    line-height: 50px;
-    vertical-align: middle;
+    height: 40px;
+    display: flex;
+    align-items: center;
+   border: 1px solid #cc9a9a;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding: 5px 10px;
 }
 
 .todo-item .toggle {
-    height: 40px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
 }
 
 .todo-item .toggle:after {
     margin: 10px 0 0 0;
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+    content: '⭕'
 }
 
 .todo-item .toggle:checked:after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+    content: '✔️'
 }
 
 .todo-item .text {
-    margin: 0 0 0 50px;
-    height: 40px;
+    margin-left: 50px;
+    flex: 1;
+    display: flex;
+    align-items: center;
 }
 
 .todo-item .remove {
     border: 0;
     background: 0;
     display: none;
-    position: absolute;
-    top: 0;
-    right: 10px;
-    bottom: 0;
     width: 40px;
-    height: 40px;
     font-size: 30px;
     color: #cc9a9a;
-    margin-bottom: 11px;
     transition: color 0.2s ease-out;
     -webkit-appearance: none;
     appearance: none;
